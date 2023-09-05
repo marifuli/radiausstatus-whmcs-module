@@ -16,8 +16,8 @@
  *
  * Within the module itself, all functions must be prefixed with the module
  * filename, followed by an underscore, and then the function name. For this
- * example file, the filename is "addonmodule" and therefore all functions
- * begin "addonmodule_".
+ * example file, the filename is "radiusstatus" and therefore all functions
+ * begin "radiusstatus_".
  *
  * For more information, please refer to the online documentation.
  *
@@ -55,7 +55,7 @@ if (!defined("WHMCS")) {
  *
  * @return array
  */
-function addonmodule_config()
+function radiusstatus_config()
 {
     return [
         // Display name for your module
@@ -93,7 +93,7 @@ function addonmodule_config()
  *
  * @return array Optional success/failure message
  */
-function addonmodule_activate()
+function radiusstatus_activate()
 {
     // Create custom tables and schema required by your module
     try {
@@ -136,7 +136,7 @@ function addonmodule_activate()
  *
  * @return array Optional success/failure message
  */
-function addonmodule_deactivate()
+function radiusstatus_deactivate()
 {
     // Undo any database and schema modifications made by your module here
     try {
@@ -170,7 +170,7 @@ function addonmodule_deactivate()
  *
  * @return void
  */
-function addonmodule_upgrade($vars)
+function radiusstatus_upgrade($vars)
 {
     $currentlyInstalledVersion = $vars['version'];
 
@@ -201,14 +201,14 @@ function addonmodule_upgrade($vars)
  *
  * This function is optional.
  *
- * @see AddonModule\Admin\Controller::index()
+ * @see radiusstatus\Admin\Controller::index()
  *
  * @return string
  */
-function addonmodule_output($vars)
+function radiusstatus_output($vars)
 {
     // Get common module parameters
-    $modulelink = $vars['modulelink']; // eg. addonmodules.php?module=addonmodule
+    $modulelink = $vars['modulelink']; // eg. radiusstatuss.php?module=radiusstatus
     $version = $vars['version']; // eg. 1.0
     $_lang = $vars['_lang']; // an array of the currently loaded language variables
 
@@ -219,7 +219,7 @@ function addonmodule_output($vars)
     // possible way of handling this using a very basic dispatcher implementation.
 
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
-    $response = 'addonmodule_output there';
+    $response = 'radiusstatus_output there';
     echo $response;
 }
 
@@ -233,7 +233,7 @@ function addonmodule_output($vars)
  *
  * @return string
  */
-function addonmodule_sidebar($vars)
+function radiusstatus_sidebar($vars)
 {
     // Get common module parameters
     $modulelink = $vars['modulelink'];
@@ -255,14 +255,14 @@ function addonmodule_sidebar($vars)
  *
  * This function is optional.
  *
- * @see AddonModule\Client\Controller::index()
+ * @see radiusstatus\Client\Controller::index()
  *
  * @return array
  */
-function addonmodule_clientarea($vars)
+function radiusstatus_clientarea($vars)
 {
     // Get common module parameters
-    $modulelink = $vars['modulelink']; // eg. index.php?m=addonmodule
+    $modulelink = $vars['modulelink']; // eg. index.php?m=radiusstatus
     $version = $vars['version']; // eg. 1.0
     $_lang = $vars['_lang']; // an array of the currently loaded language variables
 
@@ -276,6 +276,6 @@ function addonmodule_clientarea($vars)
 
     $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
 
-    $sidebar = '<p>addonmodule_clientarea output HTML goes here</p>';
+    $sidebar = '<p>radiusstatus_clientarea output HTML goes here</p>';
     return $sidebar;
 }
