@@ -1,0 +1,56 @@
+
+curl -X GET "https://rev3.kinetix.net.au/api/v2/nbn/provisioning/radius/avc/AVC000179231029" -H "accept: application/json" -H "X-Apikey: 5l8rpK7bk9xOZhfNXdeQ0ZcyQLjcmkOw" -H "X-ApiSecret: 3tXrMEzaBBqjXNgrLwSDisvBb8N2PX88"
+
+{
+    "avcId":"AVC000179231029",
+    "status":"Active",
+    "requestDateTime":"2023-09-05T11:46:34.761865Z",
+    "server":{
+        "pointOfPresence":"Melbourne"
+    },
+    "lastAuth":{
+        "status":"Accept",
+        "authDateTime":"2023-09-03T08:31:09Z"
+    },
+    "currentSession":{
+        "status":"Active",
+        "startDateTime":"2023-09-03T08:07:46Z",
+        "sessionDuration":"2 days and 3 hours",
+        "dataTransfer":{
+            "upload":{
+                "amount":"3.22",
+                "units":"GB"
+            },
+            "download":{
+                "amount":"27.1",
+                "units":"GB"
+            }
+        },
+        "ipAddress":{
+            "address":"103.248.51.66",
+            "version":4,
+            "dhcp":false
+        }
+    },
+    "recentDropouts":{
+        "recentPeriod":{
+            "startDateTime":"2023-08-31T11:46:34.736805Z",
+            "endDateTime":"2023-09-05T11:46:34.749827Z"
+        },
+        "count":2,
+        "dropouts":[
+            {
+                "startDateTime":"2023-09-03T07:30:49Z",
+                "endDateTime":"2023-09-03T07:59:26Z",
+                "sessionDuration":"28 minutes and 37 seconds",
+                "terminateReason":"Lost-Carrier"
+            },
+            {
+                "startDateTime":"2023-09-03T07:23:57Z",
+                "endDateTime":"2023-09-03T07:27:02Z",
+                "sessionDuration":"3 minutes and 5 seconds",
+                "terminateReason":"Lost-Carrier"
+            }
+        ]
+    }
+}
