@@ -1,7 +1,7 @@
 <?php 
 
-$apiKey = $_GET['apiKey'];
-$apiSecret = $_GET['apiSecretKey'];
+$apiKey = "5l8rpK7bk9xOZhfNXdeQ0ZcyQLjcmkOw";
+$apiSecret = "3tXrMEzaBBqjXNgrLwSDisvBb8N2PX88";
 $url = "https://rev3.kinetix.net.au/api/v2/nbn/provisioning/radius/avc/" . $_GET['avc_id'];
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
